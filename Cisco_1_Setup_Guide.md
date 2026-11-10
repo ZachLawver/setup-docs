@@ -143,7 +143,6 @@ exit
 ip default-gateway 192.168.1.1
 end
 copy running-config startup-config
-```
 
 ## 7. Command Reference
 
