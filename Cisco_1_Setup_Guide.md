@@ -37,6 +37,7 @@ Switch>
 Useful navigation commands: `enable`, `configure terminal`, `exit`, `end`, and `?` for context-sensitive help.
 
 
+
 ## 2. Basic Switch Configuration
 
 ### Step 1: Enter configuration mode
@@ -103,6 +104,7 @@ SW1(config)# banner motd *#Authorized Access Only#*
 SW1(config)# no ip domain-lookup 
 
 
+
 ## 3. Saving Configuration
 
 Running configuration -- RAM -- Active settings
@@ -124,6 +126,7 @@ show interface *f0/18*
 Unsaved changes can be lost after reboot.
 
 
+
 ## 4. Configuring IP Addresses
 
 A typical IPv4 setup uses an IP address, subnet mask, and (when needed) default gateway.
@@ -143,6 +146,7 @@ SW1(config)# ip default-gateway *192.168.1.1*
 An SVI typically requires an active switch port in the corresponding VLAN to become operational. The default gateway address requires a router at that address to work.
 
 
+
 ## 5. Verifying Connectivity
 
 From PC1:
@@ -158,6 +162,7 @@ Switch# show running-config
 Switch# show interfaces
 
 **Note:** Commands can also be run in global config mode.
+
 
 
 ## 6. Complete Basic Switch Setup
@@ -203,6 +208,7 @@ ip default-gateway *192.168.1.1*
 end
 
 copy running-config startup-config
+
 
 
 ## 7. Command Reference
