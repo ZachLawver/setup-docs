@@ -31,12 +31,14 @@ Useful navigation commands: `enable`, `configure terminal`, `exit`, `end`, and `
 ### Step 1: Enter configuration mode
 
 Switch> enable
+
 Switch# configure terminal
 
 
 ### Step 2: Set the hostname
 
 Switch(config)# hostname *SW1*
+
 SW1(config)#
 
 ### Step 3: Protect privileged EXEC mode
