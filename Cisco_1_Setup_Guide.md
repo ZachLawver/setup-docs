@@ -36,26 +36,26 @@ Switch# configure terminal
 
 ### Step 2: Set the hostname
 
-Switch(config)# hostname SW1
+Switch(config)# hostname *SW1*
 SW1(config)#
 
 ### Step 3: Protect privileged EXEC mode
 
-SW1(config)# enable secret Class123!
+SW1(config)# enable secret *Class123!*
 
 `enable secret` stores a hashed secret for privileged access.
 
 ### Step 4: Configure console login
 
 SW1(config)# line console 0
-SW1(config-line)# password Console123!
+SW1(config-line)# password *Console123!*
 SW1(config-line)# login
 SW1(config-line)# exit
 
 ### Step 5: Configure VTY lines (basic classroom example)
 
 SW1(config)# line vty 0 15
-SW1(config-line)# password Remote123!
+SW1(config-line)# password *Remote123!*
 SW1(config-line)# login
 SW1(config-line)# exit
 
@@ -69,9 +69,13 @@ SW1(config)# service password-encryption
 
 ### Step 7: Add a message-of-the-day banner
 
-SW1(config)# banner motd #Authorized Access Only#
+SW1(config)# banner motd *#Authorized Access Only#*
 
 **Note:** Mandatory legally in order to prosecute unauthorized access
+
+### Step 8: Prevent unwanted DNS Lookups
+
+SW1(config)# no ip domain-lookup 
 
 ## 3. Saving Configuration
 
@@ -85,6 +89,7 @@ Verification commands:
 show running-config
 show startup-config
 show version
+show interface *f0/18*
 
 Unsaved changes can be lost after reboot.
 
@@ -95,10 +100,10 @@ A typical IPv4 setup uses an IP address, subnet mask, and (when needed) default 
 ### Switch management SVI (Switch Virtual Interface)
 
 SW1(config)# interface vlan 1
-SW1(config-if)# ip address 192.168.1.2 255.255.255.0
+SW1(config-if)# ip address *192.168.1.2 255.255.255.0*
 SW1(config-if)# no shutdown (**Important** Command must be used to run VLAN)
 SW1(config-if)# exit
-SW1(config)# ip default-gateway 192.168.1.1 
+SW1(config)# ip default-gateway *192.168.1.1* 
 
 An SVI typically requires an active switch port in the corresponding VLAN to become operational. The default gateway address requires a router at that address to work.
 
@@ -106,7 +111,7 @@ An SVI typically requires an active switch port in the corresponding VLAN to bec
 
 From PC1:
 
-ping 192.168.1.11
+ping *192.168.1.11*
 
 On the switch:
 
@@ -120,27 +125,27 @@ Switch# show interfaces
 
 enable
 configure terminal
-hostname SW1
-enable secret Class123!
+hostname *SW1*
+enable secret *Class123!*
 service password-encryption
-banner motd #Authorized Access Only#
+banner motd *#Authorized Access Only#*
 
 line console 0
-password Console123!
+password *Console123!*
 login
 exit
 
 line vty 0 15
-password Remote123!
+password *Remote123!*
 login
 exit
 
 interface vlan 1
-ip address 192.168.1.2 255.255.255.0
+ip address *192.168.1.2 255.255.255.0*
 no shutdown
 exit
 
-ip default-gateway 192.168.1.1
+ip default-gateway *192.168.1.1*
 end
 copy running-config startup-config
 
