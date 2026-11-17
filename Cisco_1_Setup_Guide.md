@@ -173,6 +173,8 @@ configure terminal
 
 hostname *SW1*
 
+no ip domain-lookup
+
 enable secret *Class123!*
 
 service password-encryption
