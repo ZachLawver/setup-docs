@@ -36,7 +36,7 @@ Switch>
 
 Useful navigation commands: `enable`, `configure terminal`, `exit`, `end`, and `?` for context-sensitive help.
 
-
+<br>
 
 ## 2. Basic Switch Configuration
 
@@ -103,7 +103,7 @@ SW1(config)# banner motd *#Authorized Access Only#*
 
 SW1(config)# no ip domain-lookup 
 
-
+<br>
 
 ## 3. Saving Configuration
 
@@ -125,7 +125,7 @@ show interface *f0/18*
 
 Unsaved changes can be lost after reboot.
 
-
+<br>
 
 ## 4. Configuring IP Addresses
 
@@ -145,7 +145,7 @@ SW1(config)# ip default-gateway *192.168.1.1*
 
 An SVI typically requires an active switch port in the corresponding VLAN to become operational. The default gateway address requires a router at that address to work.
 
-
+<br>
 
 ## 5. Verifying Connectivity
 
@@ -163,7 +163,7 @@ Switch# show interfaces
 
 **Note:** Commands can also be run in global config mode.
 
-
+<br>
 
 ## 6. Complete Basic Switch Setup
 
@@ -211,7 +211,7 @@ end
 
 copy running-config startup-config
 
-
+<br>
 
 ## 7. Command Reference
 
@@ -244,3 +244,22 @@ copy running-config startup-config
 `copy running-config startup-config` -- Save configuration
 
 `ping` -- Test IP connectivity
+
+<br>
+<br>
+
+## Ethernet Pinout Instructions/Diagram
+
+- T568B is the modern standard
+
+- T568A is the crossover pinout for legacy devices that do not have Auto MDIX technology
+
+- T568A was an old color coding standard that will still work (electricity doesn't care about wire color), 
+but shouldn't be practiced do to maintain uniformity. 
+
+- Connector orientation for diagram is gold contacts facing you, clip away
+
+<br>
+<br>
+
+![Ethernet Pinout Diagram](images/ethernet_pinout.webp)
